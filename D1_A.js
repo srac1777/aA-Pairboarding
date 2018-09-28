@@ -15,4 +15,33 @@ const digital_root = (num) => {
 
 }
 
-console.log(digital_root(183));
+// console.log(digital_root(183));
+
+
+//Write a function that takes a message and an increment amount and outputs the same letters shifted by that amount in the alphabet. 
+//Assume lowercase and no punctuation. Preserve spaces.
+
+const caesar_cipher = (str, shift) => {
+    let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    let str_arr = str.split("");
+    let result = [];
+
+    str_arr.forEach(chr => {
+        if(chr !== ' '){
+            let old_idx = alphabet.indexOf(chr);
+            let new_idx = (old_idx + shift) % 26;
+            let new_char = alphabet[new_idx];
+    
+            result.push(new_char);
+        } else result.push(chr);
+    });
+
+    return result.join("");
+}
+
+console.log(caesar_cipher("hy jo", 3));
+
+
+
+
+
