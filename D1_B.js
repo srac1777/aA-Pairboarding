@@ -21,4 +21,14 @@ const longest_common_substring = (str1, str2) => {
     return max;
 }
 
-console.log(longest_common_substring("hello", "pelloy"))
+// console.log(longest_common_substring("hello", "pelloy"))
+
+// Write a function that takes an array of integers and returns their sum.Use recursion.
+
+const rec_sum = (arr) => {
+    if (arr.length <= 1) return arr[0];
+
+    return arr[arr.length - 1] + rec_sum(arr.slice(0,arr.length-1));
+}
+
+console.log(rec_sum([1,0,1]));
