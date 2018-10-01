@@ -25,4 +25,19 @@ const fibs_recursive = num => {
     return fibs;
 }
 
-console.log(fibs_recursive(7));
+// console.log(fibs_recursive(7));
+
+// Write a JavaScript function that takes a string and returns true if it's a palindrome,
+// false if it's not. Use JavaScript.
+
+const isPalindrome = str => {
+    for (let i = 0; i < Math.floor(str.length/2); i++) {
+        if(str[i] !== str[str.length - 1 - i]) return false;
+    }
+    return true;
+}
+
+// console.log(isPalindrome("ap"));
+
+
+
