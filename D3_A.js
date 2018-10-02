@@ -1,18 +1,11 @@
-// Implement the Folding Cipher.
-// It folds the alphabet in half and uses the adjacent letter.
-// Ie.a <=> z, b <=> y, c <=> x, m <=> n.
+// Implement the Array.prototype.map function in JavaScript.
 
-const folding_cipher = str => {
-    let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-    let result = "";
-
-    for (let i = 0; i < str.length; i++) {
-        let old_index = alphabet.indexOf(str[i]);
-        let new_index = (25 - old_index);
-        result += alphabet[new_index];
-    }
-
+Array.prototype.myMap = function(fn){
+    let result = [];
+    this.forEach(el => {
+        result.push(fn(el));
+    });
     return result;
 }
 
-console.log(folding_cipher("amz"));
+console.log([1,2,3].myMap(el => el*2));
