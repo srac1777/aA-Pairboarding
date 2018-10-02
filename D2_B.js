@@ -7,15 +7,18 @@ const valid_ip = str => {
     if(str.length < 7)return false;
 
     let arr = str.split(".");
+    let flag = false;
     if(arr.length !== 4) return false;
     arr.forEach(el => {
         // console.log(parseInt(el) > 255);
-        
-        if(parseInt(el) > 255 || parseInt(el) < 0) return false;
+        if(parseInt(el) > 255 || parseInt(el) < 0) flag = true;
     });
-    return true;
+    if(flag)return false;
+    else return true;
 }
 
-console.log(valid_ip("0.0.0.677"));
+console.log(valid_ip("0.0.0.256"));
+
+
 
 
