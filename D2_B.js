@@ -19,6 +19,11 @@ const valid_ip = str => {
 
 console.log(valid_ip("0.0.0.256"));
 
+// Write a method that reads in a file of integers, one per line, and sums them.
+// Skip the line if it begins with a "#".
+
+
+
 
 
 
