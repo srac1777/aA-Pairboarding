@@ -31,7 +31,7 @@ const lcss = (arr) => {
             largest_sum = current_sum;
         } else {
             current_sum += el;
-            
+            if(largest_sum > current_sum) largest_sum = current_sum;
         }
     }
 
