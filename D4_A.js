@@ -21,5 +21,21 @@ const uniqSubs = (str) => {
 // Try to solve it in O(n) time with O(1) memory.
 
 const lcss = (arr) => {
-    
+    let current_sum = arr[0];
+    let largest_sum = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        const el = arr[i]
+        if(current_sum + el <= current_sum){
+            if(el > current_sum) current_sum = el;
+            largest_sum = current_sum;
+        } else {
+            current_sum += el;
+            
+        }
+    }
+
+    return largest_sum;
 }
+
+console.log(lcss([5, 3, 7, 6, 0, -2]));
