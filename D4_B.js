@@ -26,4 +26,33 @@ const yrChecker = yrToBeChecked => {
     else return false;
 }
 
-console.log(sillyYears(1986));
+// console.log(sillyYears(1986));
+
+// Given an array of integers, return all pairs that sum up to a specified value k.
+// List the pairs in [min, max] order.
+
+const pairSum = (arr,k) => {
+    let res = new Set;
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        const element1 = arr[i];
+        for (let j = i + 1; j < arr.length; j++) {
+            const element2 = arr[j];
+            if(element1 + element2 === k){
+                const toInsert = [];
+                toInsert.push(Math.min(element1, element2));
+                toInsert.push(Math.max(element1, element2));
+                if(!res.has(toInsert)){
+                    res.add(toInsert);
+                }
+            }
+        }
+    }
+    return res;
+}
+
+console.log(pairSum([1,9,2,5,0,3,4,7], 5));
+
+
+
+
